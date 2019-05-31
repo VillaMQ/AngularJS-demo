@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    body {
+      background: #ddd;
+      font-family: helvetica, sans-serif;
+    }
+
+    img {
+      margin-right: 20px;
+    }
+
+  input {
+    padding: 20px;
+  }
+
+    .upper,
+    .lower {
+      display: flex;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+  <script src="./app.js"></script>
+  <title>Angular</title>
+</head>
+
+<body ng-app="app">
+
+  <div ng-controller="arts">
+
+    <form action="">
+      <input type="text" ng-model="mainArt.title"> <br>
+      <input type="text" ng-model="mainArt.category"> <br>
+      <textarea name="" id="" cols="30" rows="10" ng-model="mainArt.overview"></textarea> <br>
+      <button ng-click="saveArticle($event)">Save</button>
+      <button ng-click="resetArticle($event)">Cancel</button>
+    </form>
+
+    <hr>
+    <section>
+      <div class="article" ng-repeat="art in articles">
+
+        <div class="upper">
+          <img src="http://placeimg.com/300/160/any" alt="image"> </figure>
+          <div>
+            <h4>{{art.category}}</h4>
+            <h2>{{art.title}}</h2>
+          </div>
+        </div>
+
+        <p>{{art.overview}}</p>
+        <button ng-click="editArticle($index)"> Edit Article </button>
+        <button ng-click="deleteArticle($index)"> Delete Article </button>
+        <hr>
+      </div>
+  </div>
+  </section>
+
+  </div>
+
+</body>
+
+</html>

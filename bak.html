@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+  <script src="./app.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div ng-app="app">
+    <div ng-controller="user as u">
+      <h4>
+        Hello {{u.name}}
+      </h4>
+      <div ng-controller="job">
+        <h4>
+          Your salatry is {{salary}}
+        </h4>
+        <div ng-controller="taxes">
+          <h4>
+            Your anual salary is {{getTotal()}}
+            Your taxes are {{getTaxes(getTotal())}}
+          </h4>
+          <p> Thank you {{alias}} </p>
+          <hr>
+          <h2>One way DB</h2>
+          <div>
+            <span ng-bind="count" class="ng-binding">40</span>
+          </div>
+          <button ng-click="counter01()">Binary</button>
+          <div>
+            <hr>
+            <h2>One way DB</h2>
+            <span ng-bind="fib" class="ng-binding">40</span>
+          </div>
+          <br>
+           <button ng-click="fibonacci()">Fibonacci</button>
+           <br><br>
+           <!-- bound only once #} -->
+           Initial value of f fib {{::fib}}
+          <hr>
+          <h2>Two way DB</h2>
+          <input ng-model="name" type="text" />
+          <h5>Name : {{name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+  </script>
+</body>
+
+</html>
